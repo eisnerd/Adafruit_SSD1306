@@ -126,7 +126,7 @@ typedef uint32_t PortMask;
 class Adafruit_SSD1306 : public Adafruit_GFX {
 public:
   // NEW CONSTRUCTORS -- recommended for new projects
-  Adafruit_SSD1306(uint8_t w, uint8_t h, TwoWire *twi = &Wire,
+  Adafruit_SSD1306(uint8_t w, uint8_t h, TwoWireBase *twi = &Wire,
                    int8_t rst_pin = -1, uint32_t clkDuring = 400000UL,
                    uint32_t clkAfter = 100000UL);
   Adafruit_SSD1306(uint8_t w, uint8_t h, int8_t mosi_pin, int8_t sclk_pin,
@@ -169,7 +169,7 @@ protected:
 
   SPIClass *spi;   ///< Initialized during construction when using SPI. See
                    ///< SPI.cpp, SPI.h
-  TwoWire *wire;   ///< Initialized during construction when using I2C. See
+  TwoWireBase *wire;   ///< Initialized during construction when using I2C. See
                    ///< Wire.cpp, Wire.h
   uint8_t *buffer; ///< Buffer data used for display buffer. Allocated when
                    ///< begin method is called.

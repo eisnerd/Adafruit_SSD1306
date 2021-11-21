@@ -168,7 +168,7 @@
     @note   Call the object's begin() function before use -- buffer
             allocation is performed there!
 */
-Adafruit_SSD1306::Adafruit_SSD1306(uint8_t w, uint8_t h, TwoWire *twi,
+Adafruit_SSD1306::Adafruit_SSD1306(uint8_t w, uint8_t h, TwoWireBase *twi,
                                    int8_t rst_pin, uint32_t clkDuring,
                                    uint32_t clkAfter)
     : Adafruit_GFX(w, h), spi(NULL), wire(twi ? twi : &Wire), buffer(NULL),
